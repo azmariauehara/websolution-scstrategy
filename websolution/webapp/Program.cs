@@ -1,5 +1,6 @@
 //test rebase branch
 //test branch gig flow strategy
+//test stable branch for releases
 
 var builder = WebApplication.CreateBuilder(args);
 
