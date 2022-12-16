@@ -39,5 +39,5 @@ steps:
     azureSubscription: 'Azure subscription 1(ae0d5ee9-54ad-466f-9db6-4301e35952b4)'
     appType: 'webApp'
     WebAppName: 'webapp-scstrategy-app'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
     
