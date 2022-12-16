@@ -19,10 +19,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Setup .NET
+    - name: Setup .NET Core
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 6.0
     - name: Restore dependencies
       run: dotnet restore ${{github.workspace}}/websolution/webapp/webapp.csproj
     - name: Build
@@ -30,7 +30,7 @@ jobs:
     - name: Test
       run: dotnet test ${{github.workspace}}/websolution/webapp/webapp.csproj --no-restore --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish ${{github.workspace}}/websolution/webapp/webapp.csproj -c Release -0 webapp-pkg
+      run: dotnet publish ${{github.workspace}}/websolution/webapp/webapp.csproj -c Release -o webapp-pkg
     - name: Deploy to Azure webapp
       uses: azure/webapps-deploy@v2
       with: 
